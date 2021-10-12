@@ -72,3 +72,41 @@ header {
 .navegacao li a:hover {
     color: var(--red);
 }
+
+.content {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 100px;
+    z-index: 1;
+}
+
+.content h2 {
+    font-size: 5em;
+    font-weight: 300;
+    color: var(--white);
+    text-align: center;
+}
+
+.content h2 span {
+    font-weight: 700;
+}
+
+.botao {
+    display: inline-block;
+    background: var(--red);
+    color: var(--white);
+    text-decoration: none;
+    padding: 16px 36px;
+    margin-top: 20px;
+    border-radius: 50px;
+    font-size: 1.25;
+    transition: 0.25s;
+}
+
+.botao:hover {
+    text-decoration-color: none;
+    letter-spacing: 4px;
+}
