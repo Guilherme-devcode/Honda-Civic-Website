@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+:root {
+    --black: #2f2f2f;
+    --white: #fff;
+    --red: #f83038;
+}
+
+.main {
+    position: relative;
+    min-height: 100vh;
+    background: linear-gradient(#1c1c1c, #323232);
+    padding: 30px 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.main::before {
+    content: 'CIVIC';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 30vw;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.05);
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    position: relative;
+    max-width: 60px;
+    left: -80px;
+    margin-top: -15px;
+    filter: invert(100%);
+}
+
+.navegacao {
+    display: flex;
+}
+
+.navegacao li {
+    list-style: none;
+}
+
+.navegacao li a {
+    position: relative;
+    color: var(--white);
+    margin-left: 40px;
+    text-decoration: none;
+    transition: 0.25s;
+}
+
+.navegacao li a:hover {
+    color: var(--red);
+}
