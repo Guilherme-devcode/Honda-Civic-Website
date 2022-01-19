@@ -11,12 +11,13 @@
             appearance: none;
             visibility: hidden;
             display: none;
+
         }
         
         .check {
             position: absolute;
             top: 60px;
-            left: 89em;
+            left: 79rem;
             width: 40px;
             height: 20px;
             background: #f83038;
@@ -99,6 +100,8 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
+            overflow-x: hidden;
+            overflow-y: hidden;
         }
         
         .main::before {
