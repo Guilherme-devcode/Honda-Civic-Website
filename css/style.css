@@ -1,75 +1,74 @@
         @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Ubuntu', sans-serif;
         }
-        
-        input[type="checkbox"] {
-            margin: 0;
-            appearance: none;
-            visibility: hidden;
-            display: none;
 
-        }
-        
-        .check {
-            position: absolute;
-            top: 60px;
-            left: 79rem;
+        .slider-checkbox {
+            position: relative;
             width: 40px;
             height: 20px;
-            background: #f83038;
+        }
+
+        .slider-checkbox input {
+            display: none;
+        }
+
+        .slider-theme {
+            position: absolute;
             cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
             border-radius: 20px;
-            overflow: hidden;
-            transition: ease-in 0.5s;
+            transition: background-color 0.4s, transform 0.4s;
         }
-        
-        input[type="checkbox"]:checked~.check {
-            background: #fff;
-            box-shadow: 0 0 0 1800px #2f2f2f;
-        }
-        
-        .check::before {
-            content: '';
+
+        .slider-theme:before {
+            content: "";
             position: absolute;
-            top: 2px;
+            height: 16px;
+            width: 16px;
             left: 2px;
-            background: #fff;
-            width: 16px;
-            height: 16px;
+            bottom: 2px;
+            background-color: white;
             border-radius: 50%;
-            transition: 0.5s;
+            transition: transform 0.4s;
         }
-        
-        input[type="checkbox"]:checked~.check:before {
-            transform: translateX(-50px);
+
+        input:checked+.slider-theme {
+            background-color: red;
         }
-        
-        .check::after {
-            content: '';
-            position: absolute;
-            top: 2px;
-            right: 2px;
-            background: #1c1c1c;
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-            transition: 0.5s;
-            transform: translateX(50px);
+
+        input:checked+.slider-theme:before {
+            transform: translateX(18px);
         }
-        
+        .check {
+            transition: ease-in 0.25s !important; 
+        }
+        input[type="checkbox"]:checked~.check {
+            box-shadow: 0 0 0 200vh #2f2f2f;
+        }
+
         .darkmode {
-            align-items: center;
-            padding: 0;
-            position: absolute;
-            left: 89em;
-            top: 80px;
+            left: 0em;
+            margin-left: 40px;
+            display: block;
+            position: relative;
+            text-decoration: none;
+            font-size: 1em !important;
+            letter-spacing: 0.2px;
+            color: #E6E6EA;
+            text-transform: uppercase;
         }
-        
+
         .logo {
+            z-index: 100;
             filter: invert(100%);
             left: 20px;
             height: 50px;
@@ -80,17 +79,13 @@
             margin-top: -10px;
             position: absolute;
         }
-        
-        input[type="checkbox"]:checked~.check:after {
-            transform: translateX(0px);
-        }
-        
-         :root {
+
+        :root {
             --black: #2f2f2f;
             --white: #fff;
             --red: #f83038;
         }
-        
+
         .main {
             position: relative;
             min-height: 100vh;
@@ -103,8 +98,9 @@
             overflow-x: hidden;
             overflow-y: hidden;
         }
-        
+
         .main::before {
+            z-index: 100;
             content: 'CIVIC';
             position: absolute;
             top: 50%;
@@ -114,7 +110,7 @@
             font-weight: 700;
             color: rgba(26, 24, 24, 0.075);
         }
-        
+
         header {
             position: absolute;
             top: 0;
@@ -126,11 +122,11 @@
             align-items: center;
             cursor: pointer;
         }
-        
+
         header p {
             color: white;
         }
-        
+
         header:before {
             content: '';
             position: absolute;
@@ -144,25 +140,26 @@
             transform: scaleX(0);
             transition: 0.5s;
         }
-        
+
         header:hover:before {
             background: #f83038;
         }
-        
+
         header ul {
             margin: 0;
             padding: 8px 0;
             display: flex;
         }
-        
+
         header ul li {
             list-style-type: none;
             margin: 0px;
             transition: 0.25s;
         }
-        
+
         header ul li a {
             left: 0em;
+            z-index: 1000000;
             margin-left: 40px;
             display: block;
             position: relative;
@@ -173,20 +170,20 @@
             text-transform: uppercase;
             transition: 0.25s;
         }
-        
+
         header ul:hover li a {
             transform: scale(1.2);
             opacity: 0.6;
             filter: blur(2px);
         }
-        
+
         header ul li a:hover {
             color: red;
             transform: scale(1.3);
             opacity: 1;
             filter: blur(0);
         }
-        
+
         header ul li a:before {
             content: '';
             position: absolute;
@@ -196,17 +193,17 @@
             height: 100%;
             transition: 0.5s;
         }
-        
+
         .content {
+            z-index: 101;
             position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
             flex-direction: column;
             margin-top: 100px;
-            z-index: 1;
         }
-        
+
         .content h2 {
             position: relative;
             top: -60px;
@@ -215,11 +212,11 @@
             color: var(--white);
             text-align: center;
         }
-        
+
         .content h2 span {
             font-weight: 700;
         }
-        
+
         .botao {
             position: relative;
             top: -50px;
@@ -233,21 +230,21 @@
             font-size: 1.25;
             transition: 0.25s;
         }
-        
+
         .botao:hover {
             background: rgba(184, 9, 9, 0.781);
             color: var(--white);
             text-decoration-color: none;
             letter-spacing: 4px;
         }
-        
+
         .carro {
             max-width: 80%;
             position: relative;
             width: 700px;
             height: 300px;
         }
-        
+
         .footer {
             position: absolute;
             bottom: 0;
@@ -256,30 +253,30 @@
             justify-content: space-between;
             align-items: center;
         }
-        
+
         .sci {
             display: flex;
         }
-        
+
         .sci li {
             list-style: none;
         }
-        
+
         .sci li a {
             color: rgba(0, 0, 0, 0.363);
             font-size: 2em;
             margin-right: 20px;
             transition: 0.25s;
         }
-        
+
         .sci li a:hover {
             color: var(--red);
         }
-        
+
         .dots {
             display: flex;
         }
-        
+
         .dots .dot {
             position: relative;
             left: -30px;
@@ -290,12 +287,13 @@
             cursor: pointer;
             margin-left: 10px;
         }
-        
+
         .dots .dot.active {
             background: var(--white);
         }
+
         /*Carousel*/
-        
+
         .slider .slides {
             position: absolute;
             left: 0;
@@ -310,37 +308,38 @@
             opacity: 0;
             pointer-events: none;
         }
-        
+
         .slider .slides.active {
             opacity: 1;
             top: 50%;
         }
-        
+
         .slider .slides h2 {
             color: var(--white);
             font-size: 3em;
         }
-        
+
         .slider .slides h2:last-child {
             text-align: end;
         }
-        
+
         .slider .slides h2 span {
             color: var(--red);
             font-size: 0.5em;
             font-weight: 400;
             font-style: italic;
         }
+
         /*Scrollbar*/
-        
+
         body::-webkit-scrollbar {
             width: 12px;
         }
-        
+
         body::-webkit-scrollbar-track {
             background: linear-gradient(#1c1c1c, #323232);
         }
-        
+
         body::-webkit-scrollbar-thumb {
             background-color: var(--white);
             border-radius: 20px;
